@@ -15,24 +15,37 @@ int selection;
    
   scanf("%d", &selection); // compiler reads user's choice from above menu
   
-  /*if() statements below used to indicate what to execute for each of above menu options*/
   
-  if(selection==1)  // TASK 1: ROTATION CIPHER: encrypt message provided cipher text and rotation amount 
+  
+  switch(selection) //switch() statement inidicates to compiler what to execute for each of above menu options
   {
-      printf("You selected option 1 \n");
+      case 1: //if user selects option 1, perform following: encrypt message provided cipher text and rotation amount*/
+        printf("You selected option 1 \n");
+          
+        char message;
+        int key;
+        /* char encryption; */
       
-      char message;
-      int key;
-      /* char encryption; */
+        printf("Enter a text message for encryption: \n");
+        scanf("%c", &message); //text message that will be encrypted using rotation cipher
       
-      printf("Enter a text message for encryption: \n");
-      scanf("%c", &message); //text message that will be encrypted using rotation cipher
+        printf("Enter a key: \n");
+        scanf("%d", &key);  // message will be encrypted using alphabetical shift of input integer
       
-      printf("Enter a key: \n");
-      scanf("%d", &key);  // message will be encrypted using alphabetical shift of input integer
+        /* perform encryption */
+        /* print encryption: printf("Encrypted message: \n", &encryption); */
+       
+      case 2:
       
-      /* perform encryption */
-      /* print encryption: printf("Encrypted message: \n", &encryption); */
+      case 3:
+      
+      case 4:
+      
+      case 5:
+      
+      case 6:
+      
+      default: //if user input doesn't match any of other options, perform following:
   }
   
 
