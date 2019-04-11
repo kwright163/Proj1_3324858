@@ -45,10 +45,10 @@ int selection;
       
       case 6:
       
-      default: //if user input doesn't match any of other options, perform following:
+      default: //if user input doesn't match any of other options, perform following: 
+
   }
   
-
 
   return 0;
 }
