@@ -3,6 +3,7 @@
 main() {
     
 /*MENU: prints menu from which reader must choose an encryption/decryption option*/ 
+/*
 int selection;
  
   printf("Please select an option: \n");
@@ -17,24 +18,45 @@ int selection;
   
   /*if() statements below used to indicate what to execute for each of above menu options*/
   
- switch() // switch() case indicates what compiler should execute for each of above menu options 
+// switch() case indicates what compiler should execute for each of above menu options 
+ /* switch() */
 
-  {
-      case 1:
-            printf("You selected option 1 \n");
+/*
+  { 
+      case 1: 
       
-            char message[];
-            int key;
+      */ 
+     
+        printf("You selected option 1 \n");
+      
+        char message[]; //data_type array_name[array_size]
+        int key;
             
-            /* char encryption; */
+        printf("Enter a text message for encryption in lower-case letters only: \n");
+        scanf("%c", message); //text message that will be encrypted using rotation cipher
+            /* TODO: make %c read white/blank space */
+        
+        printf("Enter a key: \n");
+        scanf("%d", &key);  // message will be encrypted using alphabetical shift of input integer
       
-            printf("Enter a text message for encryption: \n");
-            scanf("%c", &message[]); //text message that will be encrypted using rotation cipher
-      
-            printf("Enter a key: \n");
-            scanf("%d", &key);  // message will be encrypted using alphabetical shift of input integer
-      
-
+        // shift goes back to start of alphabet if key is equal to or larger than 26
+        if (key>=26)
+        {
+            key = key%26;
+        }
+        
+        int n;
+        
+        /*  INITIAL: start at first character of string
+            CONDITION: make sure character does not have 'null' value
+            INCREMENT: move to next letter in string   */
+           
+        for(n=0; message[n] != '\0'; n++);
+        {
+            
+        }
+        
+/*
       case 3:
       
       case 4:
