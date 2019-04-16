@@ -2,7 +2,8 @@
 
 main() {
     
-/*MENU: prints menu from which reader must choose an encryption/decryption option*/ 
+// MENU: prints menu from which reader must choose an encryption/decryption option
+
 /*
 int selection;
  
@@ -15,11 +16,8 @@ int selection;
   printf("6) Decrypt message encrypted with substitution cipher given cipher text only \n \n");
    
   scanf("%d", &selection); // compiler reads user's choice from above menu
-  
-  /*if() statements below used to indicate what to execute for each of above menu options*/
-  
-// switch() case indicates what compiler should execute for each of above menu options 
- /* switch() */
+
+ /* switch() */// switch() case indicates what compiler should execute for each of above menu options 
 
 /*
   { 
@@ -29,29 +27,30 @@ int selection;
      
         printf("You selected option 1 \n");
       
-        char message[]; //data_type array_name[array_size]
-        int key;
+        char message[]; // data_type array_name[array_size], inputted message array w unknown size (user inputs size)
+        char character; // character: individual letter/character within string
+        int key, n;     // n: number that character is in string e.g. for 'hello', n=0 for 'h'
             
         printf("Enter a text message for encryption in lower-case letters only: \n");
         scanf("%c", message); //text message that will be encrypted using rotation cipher
-            /* TODO: make %c read white/blank space */
+        printf("You entered: %d\n", message);
+            // TO DO: make %c read white/blank space
+            // TO DO: make uppercase letters work too 
         
         printf("Enter a key: \n");
         scanf("%d", &key);  // message will be encrypted using alphabetical shift of input integer
+        printf("You entered: %d\n", &key);
       
-        // shift goes back to start of alphabet if key is equal to or larger than 26
-        if (key>=26)
+        // IF: modulus used to take value of key/shift back to start of alphabet if key is equal to or larger than 26
+        if (key >= 26)
         {
-            key = key%26;
+            key = key % 26;
         }
-        
-        int n;
         
         /*  INITIAL: start at first character of string
             CONDITION: make sure character does not have 'null' value
             INCREMENT: move to next letter in string   */
-           
-        for(n=0; message[n] != '\0'; n++);
+        for(n = 0; message[n] != '\0'; n++);
         {
             
         }
