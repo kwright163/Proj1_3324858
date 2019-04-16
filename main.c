@@ -44,7 +44,7 @@ int selection;
         // IF: modulus used to take value of key/shift back to start of alphabet if key is equal to or larger than 26
         if (key >= 26)
         {
-            key = key % 26;
+            key = key % 26; // e.g. if key = 29 = 29%26 = 3
         }
         
         /*  INITIAL: start at first character of string
