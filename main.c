@@ -3,7 +3,6 @@
 main() {
     
 // MENU: prints menu from which reader must choose an encryption/decryption option
-
 /*
 int selection;
  
@@ -27,10 +26,11 @@ int selection;
      
         printf("You selected option 1 \n");
       
-        char message[]; // data_type array_name[array_size], inputted message array w unknown size (user inputs size)
+        char message[]; // inputted message array w unknown size (user inputs size), array structure: data_type array_name[array_size],
         char character; // character: individual letter/character within string
         int key, n;     // n: number that character is in string e.g. for 'hello', n=0 for 'h'
             
+        /*
         printf("Enter a text message for encryption in lower-case letters only: \n");
         scanf("%c", message); //text message that will be encrypted using rotation cipher
         printf("You entered: %d\n", message);
@@ -40,8 +40,11 @@ int selection;
         printf("Enter a key: \n");
         scanf("%d", &key);  // message will be encrypted using alphabetical shift of input integer
         printf("You entered: %d\n", &key);
+        */
+       
+       message[] = axzd; //TRIAL input message
       
-        // IF: modulus used to take value of key/shift back to start of alphabet if key is equal to or larger than 26
+        /* IF: modulus used to take value of key/shift back to start of alphabet if key is equal to or larger than 26 */
         if (key >= 26)
         {
             key = key % 26; // e.g. if key = 29 = 29%26 = 3
@@ -52,6 +55,29 @@ int selection;
             INCREMENT: move to next letter in string   */
         for(n = 0; message[n] != '\0'; n++);
         {
+            if (65 <= character <= 90) //if user inputs capital letter (numeric boundaries are ASCII standard values)
+            {
+                character = character + key; //apply shift to character
+                
+                if (character > 90) // 90 is ASCII value for 'Z'
+                {
+                    character = character - 26; //wrap back to start of alphabet
+                }
+                
+                message[n] = character;
+            }
+
+                
+            else if (97 <= character <= 122)
+            {
+                character = character + key; //apply shift to character
+                
+                if (character > 122) // 122 is ASCII value for 'z'
+                {
+                    character = character - 26; //wrap back to start of alphabet, as if 'z' is number prior to 'a'                }
+                }
+            
+            }
             
         }
         
