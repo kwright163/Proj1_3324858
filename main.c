@@ -28,34 +28,29 @@ int selection;
      
         printf("You selected option 1 \n");
       
-        char message[100];  // inputted message array w max size of 100 characters, array structure: data_type array_name[array_size],
+        char message[100]; // inputted message array w max size of 100 characters, array structure: data_type array_name[array_size],
+        char character;    // character: individual character of message
+        int key, n;        // n: number that character is in string e.g. for 'hello', n=0 for 'h'
    
         //RECEIVING ENCRYPTION MESSAGE FROM USER
         printf("Enter a text message for encryption: \n");
-        scanf("%s", message); //compiler receives message from user input and stores in 'message
-
-    int key;
+        scanf("%[^\n]s", message); //compiler receives message from user input and stores in 'message
     
-        //RECEVING KEY SHIT FROM user
+        //RECEVING KEY SHIFT FROM USER
         printf("Enter a key: \n");
         scanf("%d", &key);
     
         //IF: modulus used to take value of key/shit back to start of alphabet if bigger than 25
         if (key >= 26)
         {
-            key = key % 26;
-            printf("The key is %d\n", key);
-            //e.g. is key = 29, key = 29%26 = 3
+            key = key % 26;  //e.g. if key = 29, key = 29%26 = 3
         }
         
         else
         {
             key = key; //key value remans unchanged
-            printf("The key is %d\n", key);
         }
         
-    int n;          //n: number that character is in string e.g. for 'hello', n=0 for 'h'
-    char character; //character: individual character of message
     
     /*  INITIAL: start at first character of string
         CONDITION: make sure character does not have 'null' value
@@ -88,8 +83,6 @@ int selection;
                 message[n] = character; //assign shifted value of character to letter
             }
         }
-    
-    printf("Your encrypted message is: %s\n", message);
     
     printf("Your encrypted message is: %s\n", message);
         
