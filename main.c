@@ -34,11 +34,13 @@ int selection;
    
         //RECEIVING ENCRYPTION MESSAGE FROM USER
         printf("Enter a text message for encryption: \n");
-        scanf("%[^\n]s", message); //compiler receives message from user input and stores in 'message
+        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+        
     
         //RECEVING KEY SHIFT FROM USER
         printf("Enter a key: \n");
         scanf("%d", &key);
+        
     
         //IF: modulus used to take value of key/shit back to start of alphabet if bigger than 25
         if (key >= 26)
