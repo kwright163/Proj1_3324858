@@ -20,7 +20,8 @@ The limitation to the functions of this program include:
 - the compiler can only process capital letters. 
 - the substitution cipher will only process inputted ciphers that contain the entire alphabet without any whitespace
 - if the user does not input any option between 1-4, the compiler will print an 'error' message, but will not re-start the program
-- the user must restart the program any time they want to observe any other task, the program finishes running after it completes a single task*/
+- the user must restart the program any time they want to observe any other task, the program finishes running after it completes a single task
+- the cipher can only process messages with a maximum of 300 characters*/
 
 
 #include <stdio.h>
@@ -31,7 +32,7 @@ main()
     int selection;     // selection: user chooses task from menu
    
     int key, n, x;     // n: number that character is in string e.g. for 'hello', n=0 for 'h', x: number that character is in alphabet and cipher string
-    char message[200]; // inputted message array w max size of 100 characters, array structure: data_type array_name[array_size],
+    char message[300]; // inputted message array w max size of 100 characters, array structure: data_type array_name[array_size],
     char character;    // character: individual character of message
     char cipher[26], alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // cipher[]: user inputs cipher alphabet, all letters of alphabet in any mixed order to form key
 
