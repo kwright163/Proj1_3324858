@@ -2,8 +2,7 @@
 
 main() {
     
-// MENU: prints menu from which reader must choose an encryption/decryption option
-int selection;
+int selection;     // selection: user chooses task from menu
  
 char message[100]; // inputted message array w max size of 100 characters, array structure: data_type array_name[array_size],
 char character;    // character: individual character of message
@@ -13,41 +12,28 @@ int x;             // x: number that character is in alphabet and cipher string
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 char cipher[26];   // cipher[]: user inputs cipher alphabet, all letters of alphabet in any mixed order to form key
 
+//  MENU: prints menu from which reader must choose an encryption/decryption option
     printf("Please select an option: \n");
     printf("1) Encrypt message with rotation cipher given cipher text and rotation amount \n");
     printf("2) Decrypt message encrypted with rotation cipher given cipher text and rotation amount \n");
     printf("3) Encrypt message with substitution cipher given message text and alphabet substitution \n");
-    printf("4) Decrypt message encrypted with substitution cipher given cipher text and substitutions \n");
+    printf("4) Decrypt message encrypted with substitution cipher given cipher text and substitutions \n\n");
     
     scanf("%d", &selection); // compiler reads user's choice from above menu
+    printf("You selected option %d\n", selection);
 
 switch(selection) //switch() case indicates what compiler should execute for each of above menu options 
 {
     case 1: // Encryption of message w rotation cipher given message text and rotation amount
-      
-        printf("You selected option 1 \n");
      
-        //RECEIVING ENCRYPTION MESSAGE FROM USER
+        //RECEIVING ENCRYPTION MESSAGE
         printf("Enter a text message for encryption: \n");
-        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+        scanf("  %[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
            
-        //RECEIVING KEY SHIFT FROM USER
+        //RECEIVING KEY SHIFT
         printf("Enter a key: \n");
         scanf("%d", &key);
         
-        //IF: modulus used to take value of key/shit back to start of alphabet if bigger than 25
-        if (key >= 26)
-        {
-            key = key % 26;  //e.g. if key = 29, key = 29%26 = 3
-        }
-        
-        else
-        {
-            key = key; //key value remans unchanged
-        }
-        //TO DO: work out if this if() section is necessary, alphabet wrapping around to beginnning may make this unnecessary
-        
-    
         //  INITIAL: start at first character of string
         //  CONDITION: make sure character does not have 'null' value
         //  INCREMENT: move to next letter in string   
@@ -86,30 +72,15 @@ switch(selection) //switch() case indicates what compiler should execute for eac
         
     
     case 2: // Decryption of message encrypted w rotation cipher given cipher text and rotation amount
-    
-        printf("You selected option 2 \n");
    
-        //RECEIVING DECRYPTION MESSAGE FROM USER
+        //RECEIVING DECRYPTION MESSAGE
         printf("Enter a text message for decryption: \n");
-        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+        scanf(" %[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
         
-        //RECEVING KEY SHIFT FROM USER
+        //RECEVING KEY SHIFT
         printf("Enter a key: \n");
         scanf("%d", &key);
         
-        //IF: modulus used to take value of key/shit back to start of alphabet if bigger than 25
-        if (key >= 26)
-        {
-            key = key % 26;  //e.g. if key = 29, key = 29%26 = 3
-        }
-        
-        else
-        {
-            key = key; //key value remans unchanged
-        }
-        //TO DO: work out if this if() section is necessary, alphabet wrapping around to beginnning may make this unnecessary
-        
-    
         //  INITIAL: start at first character of string
         //  CONDITION: make sure character does not have 'null' value
         //  INCREMENT: move to next letter in string   
@@ -148,14 +119,12 @@ switch(selection) //switch() case indicates what compiler should execute for eac
         break;
         
     case 3:
-    
-        printf("You selected task 3\n\n");
         
-        //RECEIVING ENCRYPTION MESSAGE FROM USER
+        //RECEIVING ENCRYPTION MESSAGE
         printf("Enter a text message for encryption: \n");
-        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+        scanf(" %[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
            
-        //RECEIVING KEY ALPHABET FROM USER
+        //RECEIVING KEY ALPHABET
         printf("Enter the cipher alphabet in uppercase letters (the complete alphabet in any order) e.g. QWERTYUIOPASDFGHJKLZXCVBNM \n");
         scanf("%s", cipher);
         
@@ -188,13 +157,11 @@ switch(selection) //switch() case indicates what compiler should execute for eac
         
     case 4:
     
-        printf("You selected task 4 \n\n");
-        
-        //RECEIVING DECRYPTION MESSAGE FROM USER
+        //RECEIVING DECRYPTION MESSAGE
         printf("Enter a text message for decryption: \n");
-        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
-           
-        //RECEIVING KEY ALPHABET FROM USER
+        scanf(" %[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+         
+        //RECEIVING KEY ALPHABET
         printf("Enter the cipher alphabet in uppercase letters (the complete alphabet in any order) e.g. QWERTYUIOPASDFGHJKLZXCVBNM \n");
         scanf("%s", cipher);
         
@@ -228,7 +195,8 @@ switch(selection) //switch() case indicates what compiler should execute for eac
     default: 
     
         printf("You did not select an option\n");
-    
-  return 0;
 }
+
+  return 0;
+
 }
