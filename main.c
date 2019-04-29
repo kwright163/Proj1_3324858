@@ -5,14 +5,22 @@ The rotation cipher replaces each letter of the alphabet with another letter a  
 of letters that the alphabet is rotated by when producing the substitution letters. The user is required to input the message to be encrypted and the key shift into 
 the ‘input’ file. The compiler will then assign the number that the character is in the message (e.g. in the word “hello”, the letter ‘h’ would have the place ‘0’ 
 in the array, whilst ‘e’ would have the place ‘1’). The compiler will take the ASCII value of the input characters, add the key shift and then convert the number 
-back into ASCII values, before moving on to the next character in the input message, and so on. If the ASCII value overreaches the end of the alphabet, it will loop
-back to the start, hence ‘rotating’ the alphabet. The reverse is done when decrypting messages.
+back into ASCII values, the compiler stores and prints the value of the encrypted letter, before moving on to the next character in the input message, and so on. If 
+the ASCII value overreaches the end of the alphabet, it will loop back to the start, hence ‘rotating’ the alphabet. The user will see the encrypted message printed
+as a whole. The reverse is done when decrypting messages.
 
 The substitution cipher requires the user to input an encryption message and a ‘cipher’ alphabet – they must input all letters of the alphabet in any order. Each 
 letter in the straight ‘A’ to ‘Z’ alphabet is then replaced by the letter a corresponding numbers of places in the alphabet, e.g. if the cipher was 
 “QWERTYUIOPASDFGHJKLZXCVBNM”, then ‘A’ would be replaced by ‘Q’ and so on. The compiler will roll through alphabet until it finds a letter in the alphabet that is the
-same number of places through the cipher, then will assign the value of the cipher to the original character, forming the encryption, before moving onto the next 
-letter in the message. The reverse is done when encrypting messages */
+same number of places through the cipher, then will assign the value of the cipher to the original character, forming the encryption and storing and printing the 
+encrypted character, before moving onto the next letter in the message. The user will see the encrypted message printed as a whole. The reverse is done when encrypting 
+messages 
+
+The limitation to the functions of this program include:
+- the compiler can only process capital letters. 
+- the substitution cipher will only process inputted ciphers that contain the entire alphabet without any whitespace
+- if the user does not input any option between 1-4, the compiler will print an 'error' message, but will not re-start the program
+- the user must restart the program any time they want to observe any other task, the program finishes running after it completes a single task*/
 
 
 #include <stdio.h>
