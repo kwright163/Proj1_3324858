@@ -122,8 +122,6 @@ main()
             {
                 character = message[n]; // first letter of message is 'assigned' to 'character', e.g. for first loop, character = message[0]
     
-                /* TO DO: if character is between Z ad A */
-    
                 // INIT: starts at first character of string; COND: character can't have 'null' value; INC.: move to next letter in string
                 for(x = 0; alphabet[x] != '\0'; x++)    // FOR: rolls through alphabet to match number that letter is in alphabet to letter that number is in cipher
                 {
