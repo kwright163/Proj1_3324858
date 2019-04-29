@@ -9,13 +9,15 @@ char message[100]; // inputted message array w max size of 100 characters, array
 char character;    // character: individual character of message
 int key, n;        // n: number that character is in string e.g. for 'hello', n=0 for 'h'
 
+int x;             // x: number that character is in alphabet and cipher string
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char cipher[26];   // cipher[]: user inputs cipher alphabet, all letters of alphabet in any mixed order to form key
+
     printf("Please select an option: \n");
     printf("1) Encrypt message with rotation cipher given cipher text and rotation amount \n");
     printf("2) Decrypt message encrypted with rotation cipher given cipher text and rotation amount \n");
     printf("3) Encrypt message with substitution cipher given message text and alphabet substitution \n");
     printf("4) Decrypt message encrypted with substitution cipher given cipher text and substitutions \n");
-    printf("5) Decrypt message encrypte with rotation cipher given cipher text only \n");
-    printf("6) Decrypt message encrypted with substitution cipher given cipher text only \n \n");
     
     scanf("%d", &selection); // compiler reads user's choice from above menu
 
@@ -144,7 +146,89 @@ switch(selection) //switch() case indicates what compiler should execute for eac
         printf("Your decrypted message is: %s\n", message); 
         
         break;
-  
+        
+    case 3:
+    
+        printf("You selected task 3\n\n");
+        
+        //RECEIVING ENCRYPTION MESSAGE FROM USER
+        printf("Enter a text message for encryption: \n");
+        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+           
+        //RECEIVING KEY ALPHABET FROM USER
+        printf("Enter the cipher alphabet in uppercase letters (the complete alphabet in any order) e.g. QWERTYUIOPASDFGHJKLZXCVBNM \n");
+        scanf("%s", cipher);
+        
+        //  INITIAL: start at first character of string
+        //  CONDITION: make sure character does not have 'null' value
+        //  INCREMENT: move to next letter in string   
+        for (n = 0; message[n] != '\0'; n++)
+        {
+            character = message[n]; // first letter of message is 'assigned' to 'character', e.g. for first loop, character = message[0]
+    
+            /* TO DO: if character is between Z ad A */
+    
+            // FOR: rolls through alphabet to match number that letter is in alphabet to letter that number is in cipher
+            // INITIAL: start at first letter of alphabet 'A'
+            // CONDITION: make sure character does not have 'null' value (stops at end of alphabet, after 'Z')
+            // INCREMENT: move to next letter in alphabet
+            for(x = 0; alphabet[x] != '\0'; x++)
+            {
+                // IF: if the value of 'x' in alphabet (e.g. A = 0) is the same as the value of 'character', assign value of original character in unencrypted message to cipher 
+                if (alphabet[x] == character)
+                {
+                    message[n] = cipher[x];
+                }
+            }
+        }
+    
+        printf("Your encrypted message is: %s\n", message);
+    
+        break;
+        
+    case 4:
+    
+        printf("You selected task 4 \n\n");
+        
+        //RECEIVING DECRYPTION MESSAGE FROM USER
+        printf("Enter a text message for decryption: \n");
+        scanf("%[^\n]s", message); // created 'input' file for user to input data for 'scanf()' to read and store in 'message' array
+           
+        //RECEIVING KEY ALPHABET FROM USER
+        printf("Enter the cipher alphabet in uppercase letters (the complete alphabet in any order) e.g. QWERTYUIOPASDFGHJKLZXCVBNM \n");
+        scanf("%s", cipher);
+        
+        //  INITIAL: start at first character of string
+        //  CONDITION: make sure character does not have 'null' value
+        //  INCREMENT: move to next letter in string   
+        for (n = 0; message[n] != '\0'; n++)
+        {
+            character = message[n]; // first letter of message is 'assigned' to 'character', e.g. for first loop, character = message[0]
+    
+        /* TO DO: if character is between Z ad A */
+    
+            // FOR: rolls through alphabet to match number that letter is in alphabet to letter that number is in cipher
+            // INITIAL: start at first letter of alphabet 'A'
+            // CONDITION: make sure character does not have 'null' value (stops at end of alphabet, after 'Z')
+            // INCREMENT: move to next letter in alphabet
+            for(x = 0; cipher[x] != '\0'; x++)
+            {
+            // IF: if the value of 'x' in alphabet (e.g. A = 0) is the same as the value of 'character', assign value of original character in unencrypted message to cipher 
+                if (cipher[x] == character)
+                {
+                    message[n] = alphabet[x];
+                }
+            }
+        }
+    
+        printf("Your decrypted message is: %s\n", message);
+    
+        break;
+    
+    default: 
+    
+        printf("You did not select an option\n");
+    
   return 0;
 }
 }
